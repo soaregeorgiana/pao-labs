@@ -1,5 +1,7 @@
 package ro.unibuc.lab.references;
 
+import java.util.ArrayList;
+
 /**
  * Wrapper classes are objects encapsulating primitive Java types (Java Collection Framework works with objects exclusively)
  * <p>
@@ -23,5 +25,15 @@ package ro.unibuc.lab.references;
  */
 
 public class WrapperClasses {
+
+    public static void main(String[] args){
+        int i = 10;
+        Integer intWrapped = Integer.valueOf(100);
+        short shortPrimitive = 100;
+        //Short shortWrapped = Short.valueOf(shortPrimitive);
+        Short shortWrapped = 100;
+        System.out.println(shortWrapped.shortValue());
+
+    }
 
 }

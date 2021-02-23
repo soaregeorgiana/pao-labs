@@ -44,6 +44,15 @@ public class Operations {
          * The if expression must be of type boolean.
          */
 
+        int x = 11;
+        if (x % 2 != 0) {
+            System.out.println("This is an odd number");
+        } else {
+            System.out.println("This is an even number");
+        }
+        System.out.println("This will always be executed!");
+
+
         /** switch
          *
          * checks if a value supplied in the switch matches any of the cases within. If it does, it moves the execution
@@ -51,6 +60,21 @@ public class Operations {
          * met. if there's no case that matches and the default case exists, the instructions from default case are executed.
          * if there is no default case and there is no case that matches, no instructions in the switch are executed.
          */
+        int someValue = 1;
+        switch (someValue) {
+            case 1:
+                System.out.println("Sth for 1");
+            case 2:
+                System.out.println("Sth for 2");
+                break;
+            case 3:
+                System.out.println("Sth for 3");
+            case 4:
+                System.out.println("Sth for 4");
+                break;
+            default:
+                System.out.println("Sth for default");
+        }
 
         // looping
         /** for
@@ -61,16 +85,41 @@ public class Operations {
          * body. At the end of each body execution, it runs the steps in the final section.
          */
 
+//        for (int i = 1, j = 2; i <= 5; i++) {
+//            System.out.print(i + " ");
+//            //i++ = i = i + 1
+//        }
+
         /** while
          *
          * checks if the boolean condition in the while is true. If so, it executes the body and goes to the start,
          * reevaluating the expression and rerunning if necessary.
          */
 
+        int counter = 1;
+//        while (counter < 11) {
+//            System.out.println("counter: " + counter);
+//            counter++;
+//        }
+
+//        while (true){
+//
+//        }
+
+
         /** do - while
          *
          * Similar to the while, the difference being that it first runs the body and evaluates the expression at the end, therefore
          * the statements within the do block are always executed at least once
          */
+
+        do {
+            System.out.println("counter: " + counter);
+            counter++;
+        } while (counter < 11);
+
+//        do {
+//            System.out.println("At least one");
+//        } while (2<1);
     }
 }

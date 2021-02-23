@@ -37,12 +37,63 @@ public class Primitives {
      */
     public static void main(String[] args) {
         //----------- non-floating point-------------
+        byte b1;
+        b1 = 10;
+        byte b2 = 100; //[-128,127]
+//        byte b3 = (byte)128; //-128
+//        System.out.println(b3);
+
+        short s1 = 128;
+        System.out.println(s1);
+
+        int i1 = 1200;
+        System.out.println(i1);
+        int decimalInt = 10, octalInt, binaryInt, hexaInt;
+        octalInt = 057;
+        hexaInt = 0xFF; //[0;F]
+        binaryInt = 0b10;
+
+        System.out.println(decimalInt);
+        System.out.println(octalInt);
+        System.out.println(binaryInt);
+        System.out.println(hexaInt);
+
+        int i2 = 100_000;
+//        int invalidOne = _1000;
+
+        long l1 = 100000000000L; //L, l = literal
+        System.out.println(l1);
 
         //----------- floating-point-----------------
+        //float
+        float f1 = 10.5F;// F, f literal
+        f1 = (float) 10.6;
+
+        int myInt = (int) f1;
+        System.out.println(myInt);//10
+        //double
+        double d1 = 5.5;
+        System.out.println(d1);
+        // double d2 = f1;
+        f1 = (float) d1;
 
         //------------single characters--------------
+        char myChar = 'a';
+        System.out.println(myChar);
+        myChar = '\u0068';
+        char mySecondChar = '\n';
+        System.out.print(mySecondChar);
+        System.out.print(myChar);
 
         //----------- true or false values----------
+        boolean myBoolean = true;
+        boolean mySecondBoolean = false;
+        System.out.println(b1);
+        System.out.println(b2);
+
+        boolean altNume = 5<7;
+        System.out.println(altNume);
+
     }
 
 
