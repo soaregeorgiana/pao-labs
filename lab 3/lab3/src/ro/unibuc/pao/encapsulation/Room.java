@@ -1,4 +1,4 @@
-package encapsulation;
+package ro.unibuc.pao.encapsulation;
 
 /**
  * The internal representation of objects should generally be hidden.
@@ -21,5 +21,23 @@ package encapsulation;
  */
 public class Room {
 
+    private int floor;
+    public int number;
+
+    public Room() {
+        this.floor = 5;
+    }
+
+    public int getFloor() {
+        return floor;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int newNumber) {
+        this.number = newNumber;
+    }
 
 }

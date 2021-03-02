@@ -1,4 +1,4 @@
-package inheritance;
+package ro.unibuc.pao.inheritance;
 
 /**
  * A class can be declared to inherit another class using the "extends" keyword.
@@ -13,5 +13,17 @@ package inheritance;
  * - changing behaviour -> overriding
  */
 public class Bus extends Car {
+
+    //adding new fields
+    private String route;
+
+    public Bus(String route) {
+        this.route = route;
+    }
+
+    //adding new behaviours
+    public void makeAStop(){
+        System.out.println("The bus makes a stop");
+    }
 
 }
