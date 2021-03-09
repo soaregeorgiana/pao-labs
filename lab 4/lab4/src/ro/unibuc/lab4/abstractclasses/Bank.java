@@ -11,4 +11,19 @@ package ro.unibuc.lab4.abstractclasses;
  */
 public abstract class Bank {
 
+    protected int interestRate;
+
+    public Bank() {
+        System.out.println("Bank constructor from the abstract class");
+    }
+
+    public void displayInterestRate() {
+        System.out.println("Interest rate: " + interestRate + "%");
+    }
+
+    public abstract int configureInterestRate();
+
+    public static void myStaticMethod() {
+        System.out.println("This is just for demo purpose");
+    }
 }
