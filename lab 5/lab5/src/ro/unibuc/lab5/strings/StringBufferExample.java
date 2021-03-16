@@ -16,6 +16,11 @@ public class StringBufferExample {
          * Input: "I like chocolate"
          * Replace chocolate with sweets
          */
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("I like chocolate");
+        stringBuffer.reverse();
+        System.out.println(stringBuffer);
+
     }
 
 

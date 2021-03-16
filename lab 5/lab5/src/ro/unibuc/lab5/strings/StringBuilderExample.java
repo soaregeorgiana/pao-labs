@@ -13,6 +13,11 @@ public class StringBuilderExample {
          * Ex1:
          * Reverse the the following input "I like chocolate"
          */
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("I like chocolate");
+        stringBuilder.reverse();
+        System.out.println(stringBuilder);
     }
 
 }

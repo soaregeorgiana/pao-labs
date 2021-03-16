@@ -21,39 +21,29 @@ package ro.unibuc.lab5.immutable;
  * Practicing!!
  * Ensure the following class is an immutable one
  */
-public class ImmutableStudent {
+public final class ImmutableStudent {
 
-    private int id;
-    private String name;
-    private BirthDate date;
+    private final int id;
+    private final String name;
+    private final BirthDate date;
+
 
     public ImmutableStudent(int id, String name, BirthDate birthDate) {
         this.id = id;
         this.name = name;
-        this.date = birthDate;
+//        this.date = birthDate; // NU aggregation -> composition
+        this.date = new BirthDate(birthDate.getDay(), birthDate.getMonth(), birthDate.getYear());
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public BirthDate getDate() {
         return date;
-    }
-
-    public void setDate(BirthDate date) {
-        this.date = date;
     }
 }
