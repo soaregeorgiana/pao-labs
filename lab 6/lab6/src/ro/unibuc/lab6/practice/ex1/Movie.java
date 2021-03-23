@@ -8,7 +8,7 @@ package ro.unibuc.lab6.practice.ex1;
  * -> Comparable affects the original class, i.e., the actual class is modified.
  * -> Sorting in a natural order
  */
-public class Movie {
+public class Movie implements Comparable<Movie>{
 
     private String name;
     private double rating;
@@ -42,5 +42,17 @@ public class Movie {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    @Override
+    public int compareTo(Movie movie) {
+        if (this.rating == movie.rating) {
+            return 0;
+        } else if (this.rating > movie.rating) {
+            return 1;
+        } else {
+            return -1;
+        }
+//        return Double.compare(this.rating, movie.rating);
     }
 }

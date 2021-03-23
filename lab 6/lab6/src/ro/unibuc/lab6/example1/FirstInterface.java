@@ -24,4 +24,20 @@ package ro.unibuc.lab6.example1;
  */
 public interface FirstInterface {
 
+    String HELLO = "hello";
+
+    String sayHello();
+
+    default String sayGoodBye() {
+        // myPrivateMethod();
+        return "Good Evening!";
+    }
+
+    static void print(String text) {
+        System.out.println(text);
+    }
+
+    private String myPrivateMethod() {
+        return "Good Evening!";
+    }
 }

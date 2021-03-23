@@ -7,7 +7,14 @@ package ro.unibuc.lab6.example2;
  * Unlike classes, interfaces can actually inherit from multiple superinterfaces.
  * We specify that by listing the names of all interfaces to inherit from, separated by comma.
  */
-public interface SubInterface {
+public interface SubInterface extends SuperInterfaceOne, SuperInterfaceTwo {
 
+    String defaultMethod();
+
+    // MUST
+    @Override
+    default String myDefaultMethod() {
+        return null;
+    }
 
 }

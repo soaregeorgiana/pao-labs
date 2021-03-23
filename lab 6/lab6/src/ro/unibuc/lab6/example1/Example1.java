@@ -9,6 +9,21 @@ package ro.unibuc.lab6.example1;
  * We cannot create instances of a Java interfaces by itself.
  * We must always create an instance of some class that implements the interface, and reference that instance as an instance of the interface
  */
-public class Example1 {
+public class Example1 implements FirstInterface {
 
+    //MUST
+    @Override
+    public String sayHello() {
+        return "Hello";
+    }
+
+    //CAN
+    @Override
+    public String sayGoodBye() {
+        return "Bye-Bye";
+    }
+
+    public void  myMethod(){
+        System.out.println("My method");
+    }
 }

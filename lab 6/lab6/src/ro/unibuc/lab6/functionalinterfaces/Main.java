@@ -9,6 +9,10 @@ package ro.unibuc.lab6.functionalinterfaces;
 public class Main {
 
     public static void main(String[] args) {
-
+        FunctionalInterface functionalInterface = () -> {
+            System.out.println("Executing");
+        };
+        
+        functionalInterface.execute();
     }
 }

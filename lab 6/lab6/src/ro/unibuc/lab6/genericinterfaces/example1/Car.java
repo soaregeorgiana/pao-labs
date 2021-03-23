@@ -1,5 +1,6 @@
 package ro.unibuc.lab6.genericinterfaces.example1;
 
+//generics usages
 public class Car {
 
     private String model;
