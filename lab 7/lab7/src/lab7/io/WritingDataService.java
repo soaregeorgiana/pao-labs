@@ -1,13 +1,25 @@
 package lab7.io;
 
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class WritingDataService {
 
     public static void writeUsingFileOutputStream(String text) {
+        try (FileOutputStream out = new FileOutputStream("output1.txt")) {
+            out.write(text.getBytes());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public static void writeUsingFileWriter(String text) {
+        try (FileWriter out = new FileWriter("output2.txt")) {
+            out.write(text);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public static void writeUsingDataOutputStream(String text) {

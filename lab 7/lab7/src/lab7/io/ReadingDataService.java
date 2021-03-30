@@ -1,5 +1,9 @@
 package lab7.io;
 
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;
+
 /**
  * Java I/O (Input and Output) is used to process the input and produce the output.
  * The java.io package contains different ways to perform input and output (I/O) in Java.
@@ -16,6 +20,14 @@ public class ReadingDataService {
      * frequently used classes are FileInputStream and FileOutputStream
      */
     public static void readUsingFileInputStream() {
+        try (FileInputStream in = new FileInputStream("input.txt")) {
+            int c;
+            while ((c = in.read()) != -1) {
+                System.out.print((char) c);
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     /**
@@ -27,6 +39,14 @@ public class ReadingDataService {
      * FileWriter writes two bytes at a time
      */
     public static void readUsingFileReader() {
+        try (FileReader in = new FileReader("input.txt")) {
+            int c;
+            while ((c = in.read()) != -1) {
+                System.out.print((char) c);
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     /**

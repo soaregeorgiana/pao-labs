@@ -1,5 +1,9 @@
 package lab7.exceptions.example1;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.RandomAccessFile;
+
 /**
  * An exception is an unwanted or unexpected event which occurs during the execution of
  * a program that disrupts the normal flow of that program
@@ -18,9 +22,16 @@ package lab7.exceptions.example1;
  */
 public class WorkingWithExceptions {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
+//        File file = new File("/non-existing.txt");
+//        RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
+//
+//        String myString = null;
+//        System.out.println(myString.length());
 
+        int[] myArray = {1,2};
+        System.out.println(myArray[3]);
     }
 
 }

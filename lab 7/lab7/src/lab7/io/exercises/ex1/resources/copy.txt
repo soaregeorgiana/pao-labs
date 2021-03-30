@@ -1,0 +1,9 @@
+DataInputStream class allows an application to read primitive data from the input stream.
+Java application generally uses the data output stream to write data that can later be read by a data input stream.
+BufferedInputStream provides transparent reading of chunks of bytes and buffering for a Java InputStream including any subclasses of InputStream:
+Reading larger chunks of bytes and buffering them can speed up IO.
+BufferedInputStream reads a larger block at a time into an internal buffer.
+When you read a byte from the Java BufferedInputStream you are therefore reading it from its internal buffer.
+When the buffer is fully read, the BufferedInputStream reads another larger block of data into the buffer.
+This is much faster than reading a single byte at a time from an InputStream, especially for disk access and larger data amounts.
+To add buffering to an InputStream simply wrap it in a BufferedInputStream
