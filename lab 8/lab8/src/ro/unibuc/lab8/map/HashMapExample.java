@@ -3,6 +3,7 @@ package ro.unibuc.lab8.map;
 import ro.unibuc.lab8.model.Element;
 
 import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * HashMap: It is used to store key and value pairs. Each key is mapped to a single
@@ -28,11 +29,21 @@ public class HashMapExample {
         return instance;
     }
 
+    /**
+     * Associates the specified value with the specified key in this map.
+     * If the map previously contained a mapping for the key, the old
+     * value is replaced.
+     */
     public void add(Integer key, Element value) {
+        if (!map.containsKey(key)) {
+            map.put(key, value);
+        } else {
+            System.out.println("Already exists");
+        }
     }
 
     public Element getElementBy(Integer key) {
-        return null;
+        return map.get(key);
     }
 
     public Element removeElementBy(Integer key) {
@@ -40,9 +51,19 @@ public class HashMapExample {
     }
 
     public void displayMap() {
+        Iterator<Integer> iterator = map.keySet().iterator();
+        while (iterator.hasNext()) {
+            Integer key = iterator.next();
+
+            System.out.println("The key is::" + key + " and values are :: " + map.get(key));
+        }
     }
 
     public void anotherDisplayMap() {
+        for (Integer key : map.keySet()) {
+            Element value = map.get(key);
 
+            System.out.println("The key is :: " + key + ", and value is :: " + value);
+        }
     }
 }

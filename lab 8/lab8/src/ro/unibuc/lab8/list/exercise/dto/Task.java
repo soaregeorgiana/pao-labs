@@ -18,6 +18,14 @@ public class Task {
         return id;
     }
 
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setInProgress(boolean inProgress) {
+        isInProgress = inProgress;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {

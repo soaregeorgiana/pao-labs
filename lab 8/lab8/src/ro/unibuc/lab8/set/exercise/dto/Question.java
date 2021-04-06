@@ -39,6 +39,6 @@ public class Question implements Comparable<Question> {
 
     @Override
     public int compareTo(Question o) {
-        return this.complexity - o.complexity;
+        return o.complexity - this.complexity;
     }
 }

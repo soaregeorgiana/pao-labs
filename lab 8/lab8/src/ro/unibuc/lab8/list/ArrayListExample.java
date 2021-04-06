@@ -3,6 +3,7 @@ package ro.unibuc.lab8.list;
 import ro.unibuc.lab8.model.Element;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * ArrayList: represents a resizable list of objects. We can add, remove, find, sort
@@ -52,26 +53,36 @@ public class ArrayListExample {
 
     public void add(Element element) {
         // add elements to the list
+        this.elements.add(element);
     }
 
     public void add(int index, Element element) {
         // add elements to the list
+        this.elements.add(index, element);
     }
 
     public void remove(int index) {
         // remove element with given index from the list
-    }
-
-    public void update(int index, Element element) {
-        // update element at given index with given value
+        this.elements.remove(index);
     }
 
     public void displayListUsingIterator() {
+        System.out.println("------------------------------");
+        Iterator<Element> iterator = this.elements.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
     }
 
     public void displayListUsingForEach() {
+        for (Element el : elements) {
+            System.out.println(el);
+        }
     }
 
     public void displayListUsingFor() {
+        for (int i = 0; i < elements.size(); i++) {
+            System.out.println(elements.get(i));
+        }
     }
 }

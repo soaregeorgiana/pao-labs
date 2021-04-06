@@ -2,6 +2,7 @@ package ro.unibuc.lab8.set.exercise;
 
 
 import ro.unibuc.lab8.set.exercise.dto.Question;
+import ro.unibuc.lab8.set.exercise.service.QuizService;
 
 public class QuizManagement {
     /**
@@ -19,6 +20,11 @@ public class QuizManagement {
         Question four = new Question(4, "more complex one");
         Question five = new Question(4, "more complex one");
         Question six = new Question(2, "less one");
+
+        QuizService quizService = new QuizService();
+        quizService.addQuestions(one, two, three, four, five, six);
+
+        quizService.displayQuestions();
 
     }
 }

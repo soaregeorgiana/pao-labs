@@ -1,5 +1,10 @@
 package ro.unibuc.lab8.list.exercise;
 
+import ro.unibuc.lab8.list.exercise.dto.Task;
+import ro.unibuc.lab8.list.exercise.service.TaskService;
+
+import java.util.LinkedList;
+
 public class JiraBoardManagement {
 
     /**
@@ -12,5 +17,10 @@ public class JiraBoardManagement {
      */
     public static void main(String[] args) {
 
+        TaskService service = new TaskService();
+        LinkedList<Task> readyForDevelopTasks = service.getTasksReadyForReviewSortByPriority();
+        service.addTaskInProgress(readyForDevelopTasks.getFirst());
+        service.displayInProgressTasks();
+        service.displayReadyForDevelopmentTasks();
     }
 }

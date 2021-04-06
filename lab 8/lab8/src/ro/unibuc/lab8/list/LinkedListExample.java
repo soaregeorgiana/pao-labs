@@ -2,6 +2,10 @@ package ro.unibuc.lab8.list;
 
 import ro.unibuc.lab8.model.Element;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -39,57 +43,83 @@ public class LinkedListExample {
 
     public void add(Element element) {
         //Add elements
+        this.linkedList.add(element);
     }
 
     public void add(int index, Element element) {
         //Add elements
+        this.linkedList.add(index, element);
     }
 
     public void addFirst(Element element) {
         //Add elements
+        this.linkedList.addFirst(element);
     }
 
     public void remove(int index) {
         //Remove element by index
+        this.linkedList.remove(index);
     }
 
     public void remove(Element value) {
         //Remove element by value
+        this.linkedList.remove(value);
     }
 
     public Element getFirst() {
         // Return first element
-        return null;
+        return this.linkedList.getFirst();
     }
 
     public Element getLast() {
         // Return last element
-        return null;
+        return this.linkedList.getLast();
     }
 
     public Element getElementAtIndex(int index) {
         // Return element at index
-        return null;
+        return this.linkedList.get(index);
     }
 
     public void displayLinkedListUsingIterator() {
+        Iterator<Element> iterator = this.linkedList.listIterator();
+
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
     }
 
     public void displayLinkedListUsingForEach() {
+        for (Element el : linkedList) {
+            System.out.println(el);
+        }
     }
 
     public String[] getLinkedListAsArray() {
-        return null;
+        String[] myArray = new String[linkedList.size()];
+        return linkedList.toArray(myArray);
     }
 
     public LinkedList<Element> getArrayAsLinkedList(Element[] array) {
-        return null;
+        return new LinkedList<>(Arrays.asList(array));
     }
 
     public void sort() {
+       // Collections.sort(linkedList);
+        this.linkedList.sort(new Comparator<Element>() {
+            @Override
+            public int compare(Element o1, Element o2) {
+                return o1.getTitle().compareTo(o2.getTitle());
+            }
+        });
     }
 
     public void reverseOrder() {
+        Collections.sort(linkedList, Collections.reverseOrder());
+    }
+
+    public boolean contain(Element element) {
+        return this.linkedList.contains(element);
     }
 
 }

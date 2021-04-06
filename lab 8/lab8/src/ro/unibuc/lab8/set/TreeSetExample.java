@@ -3,6 +3,7 @@ package ro.unibuc.lab8.set;
 import ro.unibuc.lab8.model.Element;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.TreeSet;
 
@@ -31,6 +32,18 @@ public class TreeSetExample {
             System.out.println(element);
         }
 
-        //TODO: Create a ComparatorClass
+        System.out.println("----------------------------");
+        TreeSet<Element> elementsWithCmp = new TreeSet<>(new Comparator<Element>() {
+            @Override
+            public int compare(Element o1, Element o2) {
+                return o2.getTitle().compareTo(o1.getTitle());
+            }
+        });
+        elementsWithCmp.addAll(elementList);
+
+        for (Element element : elementsWithCmp) {
+            System.out.println(element);
+        }
+
     }
 }
