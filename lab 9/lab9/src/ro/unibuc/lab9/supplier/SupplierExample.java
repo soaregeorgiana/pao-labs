@@ -1,6 +1,11 @@
 package ro.unibuc.lab9.supplier;
 
 import java.util.List;
+import java.util.Random;
+import java.util.function.BooleanSupplier;
+import java.util.function.DoubleSupplier;
+import java.util.function.LongSupplier;
+import java.util.function.Supplier;
 
 /**
  * A Supplier accepts no argument and returns a result .
@@ -11,11 +16,16 @@ import java.util.List;
 public class SupplierExample {
 
     public static boolean getAsBooleanUsingBooleanSupplier() {
-        return false;
+        BooleanSupplier booleanSupplier = () -> {
+            Random random = new Random();
+            return random.nextBoolean();
+        };
+        return booleanSupplier.getAsBoolean();
     }
 
     public static double getAsDoubleUsingDoubleSupplier() {
-        return 0.0;
+        DoubleSupplier pi = () -> Math.PI;
+        return pi.getAsDouble();
     }
 
     public static int getAsIntUsingIntSupplier() {
@@ -23,14 +33,19 @@ public class SupplierExample {
     }
 
     public static long getAsLongUsingLongSupplier() {
-        return 0L;
+        LongSupplier max = () -> Long.MAX_VALUE;
+        return max.getAsLong();
     }
 
     public static String asStringUsingSupplier() {
-        return null;
+        Supplier<String> msg = () -> "Some message";
+        return msg.get();
     }
 
     public static String find(List<String> words, String lookingFor) {
-        return null;
+        return words.stream()
+                .filter(word -> word.equals(lookingFor))
+                .findAny()
+                .orElseGet(() -> "Not Found!");
     }
 }

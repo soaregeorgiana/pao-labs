@@ -16,5 +16,30 @@ package ro.unibuc.lab9.functionalinterface;
 public class Main {
 
     public static void main(String[] args) {
+        //Method1
+        Printable story = new Story();
+        story.print("Text");
+
+        //Method2:
+        Printable printable = text -> System.out.println(text);
+        printable.print("Text");
+
+        Printable printableTwo = System.out::println;
+        printableTwo.print("Text");
+
+        //--------------------------------------
+        //Method1
+        //Method2 = Anonymous classes
+        Calculator calculator = new Calculator() {
+            @Override
+            public Double sum(Double a, Double b) {
+                return a + b;
+            }
+        };
+        System.out.println(calculator.sum(23.5, 6.5));
+        //Method3
+        //Calculator calculatorWithLambda = (a, b) -> a + b;
+        Calculator calculatorWithLambda = Double::sum;
+        calculatorWithLambda.sum(23.5, 6.5);
     }
 }

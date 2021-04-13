@@ -13,6 +13,7 @@ package ro.unibuc.lab9.functionalinterface;
  * Java compiler will throw an error when an interface marked with
  * @FunctionalInterface has more than one abstract methods.
  */
+@FunctionalInterface
 public interface Printable {
-
+    void print(String text);
 }
