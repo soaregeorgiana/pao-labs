@@ -1,6 +1,8 @@
 package ro.unibuc.lab10.recap;
 
 
+import ro.unibuc.lab10.dto.Cat;
+
 public class PractisingEquals {
 
     public static void main(String[] args) {
