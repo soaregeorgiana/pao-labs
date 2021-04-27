@@ -1,5 +1,12 @@
 package ro.unibuc.lab10.stream.example1;
 
+import ro.unibuc.lab10.dto.Movie;
+import ro.unibuc.lab10.stream.util.MovieUtil;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
 /**
  * Stream Operations:
  * -> intermediate operations (return Stream<T> ): allow chaining
@@ -15,5 +22,26 @@ public class StreamOperationsExample {
      */
     public static void main(String[] args) {
 
+        List <Movie> movieList = MovieUtil.initialiseMovieList();
+
+        Stream <Movie> movieListStream = movieList.stream()
+                .distinct();
+
+        Stream <Movie> modifiedStream = movieListStream.map(movie -> {
+            movie.setTitle(movie.getTitle().toUpperCase());
+            return movie;
+        });
+
+        movieList.forEach(System.out :: println);
+
+        System.out.println();
+
+        modifiedStream.forEach(System.out :: println);
+
+//        movieListStream.forEach(System.out :: println);
+
+//        long movieCount = movieListStream.count();
+
+//        System.out.println(movieCount);
     }
 }

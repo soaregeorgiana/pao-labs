@@ -1,5 +1,7 @@
 package ro.unibuc.lab10.stream.example2;
 
+import java.util.stream.Stream;
+
 /**
  * Empty Stream:
  * - The empty() method should be used in case of a creation of an empty stream;
@@ -9,6 +11,8 @@ package ro.unibuc.lab10.stream.example2;
 public class EmptyStreamExample {
 
     public static void main(String[] args) {
+        Stream<String> myStream = Stream.empty();
+
 
     }
 }
