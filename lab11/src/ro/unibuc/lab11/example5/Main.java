@@ -18,5 +18,19 @@ public class Main {
      */
     public static void main(String[] args) {
 
+        Producer producer = new Producer();
+        Consumer consumer = new Consumer();
+
+        Thread pt1 = new Thread(producer, "Producer one");
+        Thread pt2 = new Thread(producer, "Producer two");
+
+        Thread ct1 = new Thread(consumer, "Consumer One");
+        Thread ct2 = new Thread(consumer, "Consumer Two");
+
+        pt1.start();
+        pt2.start();
+
+        ct1.start();
+        ct2.start();
     }
 }
